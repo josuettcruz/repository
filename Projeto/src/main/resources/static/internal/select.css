@@ -1,0 +1,12 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 13 de nov. de 2024, 09:21:11
+    Author     : josue
+*/
+*::selection{
+    color: white;
+    background-color: black;
+}

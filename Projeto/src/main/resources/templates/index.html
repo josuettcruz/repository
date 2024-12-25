@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title th:text="${title}" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/bootstrap/bootstrap.css}">
+        <link rel="stylesheet" th:href="@{/internal/select.css}">
+    </head>
+    
+    <body>
+        
+        <!-- divtopclass -- div top class -->
+        <div class="container-fluid bg-primary-subtle mb-5 py-4 d-print-none">
+            <p th:text="${top}" class="text-primary-emphasis text-center fw-bold" style="font-size:3vw" />
+        </div><!-- div -- Topo -->
+        
+        <script th:src="@{/bootstrap/bootstrap.js}"></script>
+        
+    </body>
+    
+</html>
