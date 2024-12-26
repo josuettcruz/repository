@@ -6,6 +6,8 @@ package ead.senac.tds.Projeto.model;
 
 import java.time.LocalTime;
 
+import java.time.LocalTime;
+
 /**
  *
  * @author josue
@@ -20,10 +22,10 @@ public class Hora {
         final String msg = "Possível inconcistência na exatidão da hora!";
         this.error = msg;
         System.out.println(msg);
-        // Line 044
-        // Line 568
+        // Line 050
+        // Line 572
         
-    }//Logico() -- 09:05 26/12/2024
+    }//Logico()
     
     public Hora(LocalTime hora){
         this.hora = hora;
@@ -45,7 +47,7 @@ public class Hora {
     
     public Hora(int timer, boolean print){
         
-        if(print){Logico();}// 09:05 26/12/2024
+        if(print){Logico();}
         
         if(timer < 0){
             timer = timer - timer*2;
@@ -565,9 +567,9 @@ public class Hora {
         
     }//getNodeHoraSecond()
     
-    public String getNodeHora(boolean second, boolean print){
+    public String getNodeHora(boolean second){
         
-        if(print){Logico();}// 09:05 26/12/2024
+        Logico();
         
         return second ? getNodeHoraSecond() : getNodeHoraMinute();
         
