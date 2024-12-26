@@ -14,8 +14,14 @@ import java.util.List;
  */
 public class Registro {
     
-    public static LocalDate day = LocalDate.of(2024, 11, 18);
-    public static String host = "http://localhost:8080/";
+   
+   public static LocalDate day = LocalDate.of(2024, 11, 18);
+   public static String host = "http://localhost:8080/";
+   
+   /* package ead.senac.tds.Projeto **
+   ** Projeto.java **
+   ** Line 025 **
+   ** Line 138 **/
     
    public static String Day(String inicio, String meio, String fim){
        
@@ -129,9 +135,9 @@ public class Registro {
         
         return txt;
         
-    }//Host(String local)
+    }/*Host(String local)*/
     
-    public static String Title(String text){
+    public static String Title(String text, String separator){
         
         boolean ifo = false;
         
@@ -268,6 +274,7 @@ public class Registro {
             
             if(document.get(x).contains("[") || document.get(x).contains("(") || document.get(x).contains("{")){
                 
+                txt += separator;
                 txt += "[";
                 
                 ifo = true;
@@ -346,7 +353,7 @@ public class Registro {
         
     }//Title(String text)
     
-    public static String Select(String text, String opc, int max){
+    /*public static String Select(String text, String opc, int max){
         
         boolean word_null = true;
         int letter = 0;
@@ -395,7 +402,7 @@ public class Registro {
             return txt;
         }
         
-    }//Select(String text, String opc, int max)
+    }**Select(String text, String opc, int max)*/
     
     public static String Select(String text, int max){
         
