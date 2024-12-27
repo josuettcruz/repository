@@ -4,8 +4,7 @@
  */
 package ead.senac.tds.Projeto.model;
 
-import java.time.LocalTime;
-
+import static java.lang.Math.round;
 import java.time.LocalTime;
 
 /**
@@ -16,16 +15,6 @@ public class Hora {
     
     private LocalTime hora;
     private String error;
-    
-    private void Logico(){
-        
-        final String msg = "Possível inconcistência na exatidão da hora!";
-        this.error = msg;
-        System.out.println(msg);
-        // Line 050
-        // Line 572
-        
-    }//Logico()
     
     public Hora(LocalTime hora){
         this.hora = hora;
@@ -45,19 +34,17 @@ public class Hora {
         
     }//Hora(boolean now)
     
-    public Hora(int timer, boolean print){
-        
-        if(print){Logico();}
+    public Hora(int timer){
         
         if(timer < 0){
             timer = timer - timer*2;
         }
         
-        int hour = 0;
+        /*int hour = 0;
         int minute = 0;
         int second = 0;
         
-        for(int z = 0; z <= timer; z++){
+        for(int z = 0; z < timer; z++){
             
             if(second < 60){
                 
@@ -65,22 +52,26 @@ public class Hora {
                 
             } else {//if(second < 60)
                 
-                second = 0;
-                
                 if(minute < 60){
                     
                     minute++;
                     
                 } else {//if(minute < 60)
                     
-                    minute = 0;
                     hour++;
+                    minute = 0;
                     
                 }//if(minute < 60)
                 
+                second = 0;
+                
             }//if(second < 60)
             
-        }//for(int z = 0; z <= timer; z++)
+        }/*for(int z = 0; z <= timer; z++)*/
+        
+        int second = timer % 60;
+        int minute = round(timer/60);
+        int hour = round(timer/(60*60));
         
         this.hora = LocalTime.of(hour, minute, second);
         
@@ -568,8 +559,6 @@ public class Hora {
     }//getNodeHoraSecond()
     
     public String getNodeHora(boolean second){
-        
-        Logico();
         
         return second ? getNodeHoraSecond() : getNodeHoraMinute();
         
