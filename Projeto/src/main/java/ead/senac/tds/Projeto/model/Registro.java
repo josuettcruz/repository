@@ -17,11 +17,6 @@ public class Registro {
    
    public static LocalDate day = LocalDate.of(2024, 11, 18);
    public static String host = "http://localhost:8080/";
-   
-   /* package ead.senac.tds.Projeto **
-   ** Projeto.java **
-   ** Line 025 **
-   ** Line 138 **/
     
    public static String Day(String inicio, String meio, String fim){
        
@@ -179,7 +174,7 @@ public class Registro {
                     
                 }//for(String ins : inline)
                 
-            } else if(table.contains("-")){
+            }/* else if(table.contains("-")){
                 
                 String inline[] = table.split("-");
                 
@@ -193,7 +188,7 @@ public class Registro {
                     
                 }//for(String ins : inline)
                 
-            } else if(table.contains("_")){
+            }*/ else if(table.contains("_")){
                 
                 String inline[] = table.split("_");
                 
@@ -260,6 +255,8 @@ public class Registro {
                     case "as":
                     case "ás":
                     case "às":
+                    case "lhe":
+                    case "lhes":
                     txt += document.get(x).toLowerCase();
                     select = false;
                     break;
@@ -353,57 +350,6 @@ public class Registro {
         
     }//Title(String text)
     
-    /*public static String Select(String text, String opc, int max){
-        
-        boolean word_null = true;
-        int letter = 0;
-        
-        String txt = "";
-        
-        String space[] = text.split(" ");
-        
-        List<String> doc = new ArrayList<>();
-        
-        for(String sp : space){if(sp.length() > 1){doc.add(sp);}}
-        
-        for(int i = 0; i < doc.size(); i++){
-            
-            letter = letter + doc.get(i).length();
-            
-            if(i > 0){
-                txt += " ";
-            }
-            
-            if(letter <= max){
-                
-                txt += doc.get(i);
-                word_null = false;
-                
-            } else if(word_null){//if(letter <= max)
-                
-                int dig = max - letter;
-                
-                txt += doc.get(i).substring(0, dig);
-                txt += "...";
-                break;
-                
-            } else {//if(letter <= max)
-                
-                txt += "...";
-                break;
-                
-            }//if(letter <= max)
-            
-        }//for(int i = 0; i < doc.size(); i++)
-        
-        if(text.trim().isBlank()){
-            return opc.trim();
-        } else {
-            return txt;
-        }
-        
-    }**Select(String text, String opc, int max)*/
-    
     public static String Select(String text, int max){
         
         boolean word_null = true;
@@ -438,7 +384,7 @@ public class Registro {
                 
             } else {//if(letter <= max)
                 
-                txt += "...";
+                txt += " ...";
                 break;
                 
             }//if(letter <= max)

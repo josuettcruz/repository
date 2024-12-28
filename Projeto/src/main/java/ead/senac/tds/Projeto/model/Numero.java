@@ -82,4 +82,8 @@ public class Numero {
         return this.valid;
     }
     
+    public boolean Val(boolean val){
+        return val ? this.num > 0 : this.num > 0 && this.Val();
+    }
+    
 }
