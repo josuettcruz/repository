@@ -40,12 +40,37 @@ public class Hora {
             timer = timer - timer*2;
         }
         
-        /*int second = timer % 60;
-        int hour = round(timer/(60*60));
-        int minute = (timer/(60*60)) % 60;*/
+        /*int hour = 0;
+        int minute = 0;
+        int second = 0;
+        
+        for(int z = 0; z < timer; z++){
+            
+            if(second < 60){
+                
+                second++;
+                
+            } else {//if(second < 60)
+                
+                if(minute < 60){
+                    
+                    minute++;
+                    
+                } else {//if(minute < 60)
+                    
+                    hour++;
+                    minute = 0;
+                    
+                }//if(minute < 60)
+                
+                second = 0;
+                
+            }//if(second < 60)
+            
+        }/*for(int z = 0; z <= timer; z++)*/
         
         this.hora = LocalTime.of(round(timer/(60*60)),
-                (timer/(60*60)) % 60,
+                round(timer/60),
                 timer % 60);
         
     }//Hora(int timer)
