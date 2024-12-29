@@ -40,11 +40,13 @@ public class Hora {
             timer = timer - timer*2;
         }
         
-        int second = timer % 60;
+        /*int second = timer % 60;
         int hour = round(timer/(60*60));
-        int minute = hour % 60;
+        int minute = (timer/(60*60)) % 60;*/
         
-        this.hora = LocalTime.of(hour, minute, second);
+        this.hora = LocalTime.of(round(timer/(60*60)),
+                (timer/(60*60)) % 60,
+                timer % 60);
         
     }//Hora(int timer)
     
